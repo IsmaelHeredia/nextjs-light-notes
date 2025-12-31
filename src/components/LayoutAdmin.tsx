@@ -144,12 +144,6 @@ export default function LayoutAdmin({
                 </IconButton>
               </Tooltip>
 
-              <Tooltip title="About">
-                <IconButton onClick={() => handleOpenAbout() }>
-                  <InfoIcon />
-                </IconButton>
-              </Tooltip>
-
               <Tooltip title="Tema">
                 <IconButton
                   onClick={() =>
@@ -163,6 +157,13 @@ export default function LayoutAdmin({
                   {mode === "light" ? <DarkModeIcon /> : <WbSunnyIcon />}
                 </IconButton>
               </Tooltip>
+
+              <Tooltip title="About">
+                <IconButton onClick={() => handleOpenAbout()}>
+                  <InfoIcon />
+                </IconButton>
+              </Tooltip>
+
             </Box>
           </Toolbar>
         </AppBar>
