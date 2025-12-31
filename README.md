@@ -52,8 +52,8 @@ NODE_ENV=development
 Para crear la bd:
 
 ```
-npx drizzle-kit generate
-npx drizzle-kit migrate
+npm run generate
+npm run migrate
 ```
 
 **5.** Para ejecutar los seeds de prueba:
@@ -83,4 +83,18 @@ Para ejecutar los tests:
 
 ```
 npm test
+```
+
+### Uso con Docker
+
+Para poner en marcha el servicio de **NextJS** usando Docker, se debe ejecutar el siguiente comando:
+
+```
+docker compose up -d --build
+```
+
+Una vez que el servicio esté activo, se podra acceder desde las siguiente URL:
+
+```
+http://localhost:3000
 ```
