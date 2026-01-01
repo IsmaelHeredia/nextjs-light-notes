@@ -442,7 +442,11 @@ export default function Dashboard() {
                       }}
                     >
                       <Typography variant="caption" sx={{ opacity: 0.6 }}>
-                        {new Date(item.note.createdAt).toLocaleTimeString()}
+                        {new Date(item.note.createdAt).toLocaleTimeString("en-US", {
+                          hour: "2-digit",
+                          minute: "2-digit",
+                          hour12: true,
+                        })}
                       </Typography>
                       <Typography sx={{ mt: 0.5 }}>{item.note.text}</Typography>
                     </Paper>
@@ -456,7 +460,22 @@ export default function Dashboard() {
 
       <Fab
         size="small"
-        sx={{ position: "fixed", bottom: 150, right: 24, zIndex: 10 }}
+        sx={{
+          position: "fixed",
+          bottom: 150,
+          right: 24,
+          zIndex: 10,
+
+          backgroundColor: theme.palette.success.main,
+          color: theme.palette.background.default,
+          border: `1px solid ${theme.palette.divider}`,
+          boxShadow: theme.shadows[2],
+          backdropFilter: "blur(4px)",
+          "&:hover": {
+            backgroundColor: theme.palette.success.dark,
+          },
+
+        }}
         onClick={() => rowVirtualizer.scrollToIndex(0)}
       >
         <KeyboardArrowUpIcon />
@@ -464,7 +483,22 @@ export default function Dashboard() {
 
       <Fab
         size="small"
-        sx={{ position: "fixed", bottom: 100, right: 24, zIndex: 10 }}
+        sx={{
+          position: "fixed",
+          bottom: 100,
+          right: 24,
+          zIndex: 10,
+
+          backgroundColor: theme.palette.success.main,
+          color: theme.palette.background.default,
+          border: `1px solid ${theme.palette.divider}`,
+          boxShadow: theme.shadows[2],
+          backdropFilter: "blur(4px)",
+          "&:hover": {
+            backgroundColor: theme.palette.success.dark,
+          },
+
+        }}
         onClick={() =>
           rowVirtualizer.scrollToIndex(groupedItems.length - 1, { align: "end" })
         }

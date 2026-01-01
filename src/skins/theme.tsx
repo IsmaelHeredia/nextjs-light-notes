@@ -16,12 +16,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     bgPaper: '#3c3836',
     text: '#ebdbb2',
     red: '#cc241d',
-    green: '#98971a',
+    green: '#b8bb26',
     yellow: '#d79921',
     blue: '#458588',
     purple: '#b16286',
     cyan: '#689d6a',
     gray: '#a89984',
+    orange: '#d79921',
     lightGreen: '#a9b665',
   };
 
@@ -30,12 +31,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     bgPaper: '#ebdbb2',
     text: '#7C6F64',
     red: '#9d0006',
-    green: '#79740e',
+    green: '#98971a',
     yellow: '#b57614',
     blue: '#076678',
     purple: '#8f3f71',
     cyan: '#427b58',
     gray: '#a89984',
+    orange: '#d79921',
     lightGreen: '#b8bb26',
   };
 
@@ -60,7 +62,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     palette: {
       mode,
       primary: {
-        main: currentColors.blue,
+        main: currentColors.green,
         contrastText: isDark ? currentColors.bg : currentColors.text,
       },
       secondary: {

@@ -215,15 +215,10 @@ export default function LayoutAdmin({
                   },
 
                   "& .Mui-selected": {
-                    backgroundColor: theme.palette.background.default,
                     color: theme.palette.customButton?.colorText,
                     fontWeight: 700,
                     boxShadow: theme.shadows[2],
                     borderColor: theme.palette.primary.main,
-                  },
-
-                  "& .Mui-selected:hover": {
-                    backgroundColor: theme.palette.primary.dark,
                   },
                 }}
               >
@@ -338,7 +333,13 @@ export default function LayoutAdmin({
 
             <Divider />
 
-            <List>
+            <List
+              sx={{
+                maxHeight: 300,
+                overflowY: "auto",
+                pr: 1,
+              }}
+            >
               {filteredWorkspaces.map((ws) => {
                 const isEditingThis = editingId === ws.id;
                 const isBlocked = workspaceLocked && !isEditingThis;
@@ -391,6 +392,7 @@ export default function LayoutAdmin({
                     </Box>
 
                     <IconButton
+                      color="primary"
                       size="small"
                       disabled={isBlocked || !onRenameWorkspace}
                       onClick={(e) => {
@@ -417,7 +419,7 @@ export default function LayoutAdmin({
 
                     <IconButton
                       size="small"
-                      color="error"
+                      color="warning"
                       disabled={workspaceLocked || !onDeleteWorkspace}
                       onClick={(e) => {
                         e.stopPropagation();
