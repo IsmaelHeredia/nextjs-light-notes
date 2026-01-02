@@ -544,7 +544,7 @@ export default function Dashboard() {
         onClose={() => {
           setEditingNote(null);
         }}
-        fullWidth
+        fullScreen
         maxWidth="sm"
       >
         <DialogTitle sx={{ fontSize: 31, fontWeight: 800, position: "relative", textAlign: "center", px: 4 }}>
@@ -563,14 +563,25 @@ export default function Dashboard() {
             <CloseIcon />
           </IconButton>
         </DialogTitle>
-        <DialogContent>
+        <DialogContent sx={{
+          p: 3,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}>
           <TextField
             multiline
             fullWidth
             value={editingText}
             onChange={(e) => setEditingText(e.target.value)}
-            sx={{ mt: 2, height: 200, overflowY: "auto" }}
-            InputProps={{ sx: { height: "100%", alignItems: "flex-start" } }}
+            sx={{ flex: 1 }}
+            InputProps={{
+              sx: {
+                height: "100%",
+                alignItems: "flex-start",
+                overflowY: "auto",
+              },
+            }}
           />
         </DialogContent>
         <DialogActions sx={{ justifyContent: "flex-end", gap: 2, px: 3, pb: 2 }}>
