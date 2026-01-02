@@ -313,6 +313,8 @@ export default function Dashboard() {
     setDeleteWorkspaceId(null);
   };
 
+  const isSearching = Object.keys(filters).length > 0;
+
   return (
     <LayoutAdmin
       workspaces={workspaces}
@@ -343,7 +345,7 @@ export default function Dashboard() {
         )
       }
 
-      {!loading && groupedItems.length === 0 && (
+      {!loading && notes.length === 0 && (
         <Box
           sx={{
             height: "calc(100vh - 64px - 110px)",
@@ -354,25 +356,34 @@ export default function Dashboard() {
             px: 3,
           }}
         >
-          <Box
-            sx={{
-              maxWidth: 420,
-              opacity: 0.85,
-            }}
-          >
-            <Typography
-              variant="h5"
-              fontWeight={700}
-              sx={{ mb: 1 }}
-            >
+          <Box sx={{ maxWidth: 420, opacity: 0.85 }}>
+            <Typography variant="h5" fontWeight={700} sx={{ mb: 1 }}>
               No hay notas en este workspace
             </Typography>
+            <Typography variant="body1" sx={{ opacity: 0.7 }}>
+              Empezá escribiendo una nota abajo para guardar ideas o recordatorios
+            </Typography>
+          </Box>
+        </Box>
+      )}
 
-            <Typography
-              variant="body1"
-              sx={{ opacity: 0.7 }}
-            >
-              Empezá escribiendo una nota abajo para guardar ideas o recordatorios.
+      {!loading && notes.length > 0 && visibleNotes.length === 0 && isSearching && (
+        <Box
+          sx={{
+            height: "calc(100vh - 64px - 110px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            px: 3,
+          }}
+        >
+          <Box sx={{ maxWidth: 420, opacity: 0.85 }}>
+            <Typography variant="h5" fontWeight={700} sx={{ mb: 1 }}>
+              No se encontraron notas
+            </Typography>
+            <Typography variant="body1" sx={{ opacity: 0.7 }}>
+              Probá cambiando los filtros o el texto de búsqueda
             </Typography>
           </Box>
         </Box>
