@@ -40,4 +40,5 @@ next-env.d.ts
 /data/*.sqlite
 /data/*.db
 
-/drizzle
+/drizzle/meta
+/drizzle/*.sql
