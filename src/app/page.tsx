@@ -535,6 +535,9 @@ export default function Dashboard() {
           placeholder="Escribí tu mensaje… (Ctrl + Enter)"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          autoComplete="off"
+          autoCorrect="off"
+          spellCheck={false}
           onKeyDown={(e) => e.key === "Enter" && e.ctrlKey && handleSend()}
         />
       </Box>
@@ -574,6 +577,9 @@ export default function Dashboard() {
             fullWidth
             value={editingText}
             onChange={(e) => setEditingText(e.target.value)}
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck={false}
             sx={{ flex: 1 }}
             InputProps={{
               sx: {
