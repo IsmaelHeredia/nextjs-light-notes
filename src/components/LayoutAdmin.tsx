@@ -119,7 +119,13 @@ export default function LayoutAdmin({
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <AppBar position="fixed" elevation={0}>
+        <AppBar
+          position="fixed"
+          elevation={0}
+          sx={{
+            borderRadius: 0,
+          }}
+        >
           <Toolbar
             sx={{
               justifyContent: "space-between",
