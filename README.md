@@ -1,4 +1,4 @@
-Light Notes es una aplicación web minimalista para la gestión de workspaces y notas, construida con Next.js, persistencia local con SQLite, ORM Drizzle, y pruebas de integración usando Vitest.
+Light Notes es una aplicación web minimalista para la gestión de workspaces y notas, construida con **Next.js**, persistencia local con **SQLite**, **Drizzle ORM**, y pruebas de integración usando **Vitest**.
 
 El proyecto está pensado para ser simple, rápido, sin depender de servicios externos.
 
@@ -24,12 +24,66 @@ El proyecto está pensado para ser simple, rápido, sin depender de servicios ex
 
 - Eliminar notas
 
+### Buscador
+
+El buscador permite filtrar las notas dentro del workspace activo, combinando distintos criterios de texto y fecha.
+
+Los filtros disponibles son:
+
+**Búsqueda por texto**
+
+- Filtra las notas cuyo contenido incluya el texto ingresado.
+
+**Filtros rápidos por fecha**
+
+- **Hoy:** muestra notas creadas en el día actual.
+
+- **Ayer:** muestra notas creadas el día anterior.
+
+- **Esta semana:** muestra notas desde el inicio de la semana hasta hoy.
+
+- **Este mes:** muestra notas del mes y año actuales.
+
+- Los filtros rápidos son **excluyentes** entre sí.
+
+**Filtro por año**
+
+- Permite mostrar solo notas creadas en un año específico.
+
+- Puede combinarse con otros filtros.
+
+**Rango de fechas personalizado**
+
+- **Desde:** fecha mínima de creación de la nota.
+
+- **Hasta:** fecha máxima de creación de la nota.
+
+**Combinación de filtros**
+
+- Los filtros pueden combinarse (por ejemplo: texto + mes, o texto + rango de fechas).
+
+## Capturas de pantalla
+
+A continuación, se muestran algunas imágenes de la aplicación en funcionamiento:
+
+![screenshot]()
+
+![screenshot]()
+
+![screenshot]()
+
+![screenshot]()
+
+![screenshot]()
+
+![screenshot]()
+
 ### Instalación del proyecto
 
 **1.** Clonar el repositorio
 
 ```
-git clone <url>
+git clone https://github.com/IsmaelHeredia/nextjs-light-notes.git
 cd light-notes
 ```
 
@@ -87,7 +141,7 @@ npm test
 
 ### Uso con Docker
 
-Para poner en marcha el servicio de **NextJS** usando Docker, se debe ejecutar el siguiente comando:
+Para poner en marcha el servicio de **NextJS** usando **Docker**, se debe ejecutar el siguiente comando:
 
 ```
 docker compose up -d --build
